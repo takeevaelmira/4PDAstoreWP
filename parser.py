@@ -64,7 +64,7 @@ def main():
             
     # Сохраняем результат в JSON для фронтенда
     os.makedirs('assets', exist_ok=True)
-    with open('data.json', 'w', encoding='utf-8') as f:
+    with open('data.json', 'w', encoding='utf-8') as f: # Имени файла в корне достаточно
         json.dump(apps, f, ensure_ascii=False, indent=2)
     print(f"Успешно сохранено приложений: {len(apps)}")
 
