@@ -2,18 +2,41 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Каталог приложений 4PDA</title>
+    <title>Каталог тем 4PDA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <h1>Каталог софта 4PDA</h1>
-    </div>
+    <header class="header">
+        <div class="header-content">
+            <h1>Каталог программ 4PDA</h1>
+            <p>Автоматическое обновление тем из раздела 356</p>
+        </div>
+    </header>
 
-    <div class="container" id="app-list">
-        <p class="loading">Загрузка каталога...</p>
+    <main class="container">
+        <div id="app-list" class="app-grid">
+            <div class="loading-spinner">Загрузка каталога тем...</div>
+        </div>
+    </main>
+
+    <!-- Модальное окно для полного просмотра темы -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-window">
+            <button id="modal-close" class="modal-close">&times;</button>
+            <h2 id="modal-title">Название темы</h2>
+            <div class="modal-actions">
+                <a id="modal-forum-link" href="#" target="_blank" rel="noopener" class="btn-primary">Открыть тему на 4PDA</a>
+            </div>
+            <hr>
+            <h3>Описание из шапки темы:</h3>
+            <div id="modal-description" class="modal-description"></div>
+            
+            <hr>
+            <h3>Последние сообщения в теме:</h3>
+            <div id="modal-comments" class="modal-comments"></div>
+        </div>
     </div>
 
     <script src="app.js"></script>
